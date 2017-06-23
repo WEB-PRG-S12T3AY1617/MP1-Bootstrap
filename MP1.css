@@ -1,0 +1,62 @@
+#mainDiv
+{
+  font: 2em "Arial"
+}
+
+body{
+  background-image: url("images/bg.jpg");
+  background-color: #404040;
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  border-style: none;
+  border-color: black;
+  font-size: 80%;
+  color: black;
+}
+
+
+
+#leftfooter
+{
+  position: absolute;
+  left: 0;
+}
+
+#rightFooter
+{
+  position: absolute;
+  right: 0;
+}
+
+#headerList{
+  background-color: #444;
+  color: #fff;
+  border-style: ridge;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#headerList li
+{
+  display: inline;
+  padding: 1em;
+  font-size: 135%;
+}
+
+a{
+  color:white;
+  text-decoration: none;
+}
+
+a:hover
+{
+  color:  black;
+}
+
+a:active
+{
+  color:  #262626;
+}
