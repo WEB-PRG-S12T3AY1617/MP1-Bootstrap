@@ -13,6 +13,33 @@
   flex-direction: column;
 }
 
+#albumDiv
+{
+  height: 20em;
+  width: 100%;
+  display: flex;
+  overflow-y: auto;
+  overflow-x: auto;
+  flex-direction: column;
+  vertical-align: center;
+  flex-wrap: wrap;
+}
+
+.albumButton
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.albumTitle
+{
+  display: flex;
+}
+.details
+{
+  display: flex;
+}
+
 body{
   background-image: url("images/bg.jpg");
   background-color: #404040;

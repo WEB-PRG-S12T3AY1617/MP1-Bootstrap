@@ -70,7 +70,7 @@ $(document).ready(function() {
 		console.log("hello");
 		$("#contentDiv").empty();
 		userId = $(this).attr("id");
-		
+
 		$.ajax({
 			type: 'GET',
 			url: 'https://jsonplaceholder.typicode.com/users',
@@ -136,19 +136,34 @@ $(document).ready(function() {
 			}
 		});
 	});
-
+//changed contentDiv to albumdiv
 	$("#album").click( function() {
 		$("#mainDiv").empty();
-		$("#mainDiv").append("<div id = \"contentDiv\"><h1 id = \"contents\">Album goes here</h1></div>");
-		$("#contentDiv").css("background", "red");
+		$("#mainDiv").append("<div id = \"albumDiv\"><h3 id = \"contents\">Albums: 	</h3></div>");
+
 
 		//ajax part here
 		$.ajax({
 			type: 'GET',
 			url: 'https://jsonplaceholder.typicode.com/albums',
-			success: function(data) {
-				console.log("sup world", data[0]);
+
+			success: function(album) {
+				$.each(album, function(i,photo){
+						$("#albumDiv").append("<div class = \"albumButton\"><button class = \"albumButton\" data-userId = \"" + photo.userId + "\" data-Id = \"" + photo.Id + "\"" + "><div class = \"albumTitle\">" + photo.title + "</div><div class = \"details\"> User ID = " + photo.userId + " ID = " + photo.id + "</div></button></div>	");
+						$(".details").hide();
+				});
 			}
 		});
 	});
+
+	$(document).on("click", ".albumButton", function(){
+		if($(this).children(".details").css("display") != "none")
+		{
+			$(this).children(".details").slideUp();
+		}
+		else
+			$(this).children(".details").slideDown();
+
+	});
+
 });
