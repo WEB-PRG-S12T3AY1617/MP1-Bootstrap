@@ -4,4 +4,9 @@ $(document).ready(function(){
     var x =  $(this).attr("posts-userID");
     $("#profileInfo-" + x).show();
   });
+
+  $("#homeButton").click(function(){
+    $(".classProfileDiv").hide();
+    $(".classPostDiv").show();
+  });
 });
