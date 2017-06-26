@@ -1,143 +1,60 @@
-#mainDiv
+body
 {
-  font: 2em "Arial"
+  margin: auto;
+  background-color: #fffdf9;
 }
 
-#contentDiv {
-  height: 15em;
-  width: 80%;
-  overflow-y: auto;
-  overflow-x: auto;
-  vertical-align: center;
+#homebutton
+{
+  height: 300px;
+  width: 100px;
+}
+#banner
+{
   display: flex;
-  flex-direction: column;
-}
-
-#albumDiv
-{
-  height: 20em;
+  background-color: #36c8ed;
+  font-size: 2em;
+  font-family: "Georgia";
+  margin: 0;
   width: 100%;
+  justify-content: space-evenly;
+  color: white;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.titleDiv
+{
+  font-size: 2em;
+}
+
+.classpostDiv{
   display: flex;
-  overflow-y: auto;
-  overflow-x: auto;
+  vertical-align: middle;
+}
+#headText{
+  margin: 0;
+}
+
+#headTextContainer
+{
+  text-align: center;
+}
+
+#headerContainer
+{
+  display: flex;
+  margin: 0;
   flex-direction: column;
-  vertical-align: center;
-  flex-wrap: wrap;
 }
 
-.albumButton
+#mainFooterDiv
 {
-  display: flex;
-  flex-direction: column;
+
 }
 
-.albumTitle
+footer
 {
-  display: flex;
-}
-.details
-{
-  display: flex;
-}
-
-body{
-  background-image: url("images/bg.jpg");
-  background-color: #404040;
-}
-
-footer{
   position: absolute;
   bottom: 0;
-  border-style: none;
-  border-color: black;
-  font-size: 80%;
-  color: black;
-}
-
-
-
-#leftfooter
-{
-  position: absolute;
-  left: 0;
-}
-
-#rightFooter
-{
-  position: absolute;
-  right: 0;
-}
-
-#headerList{
-  background-color: #444;
-  color: #fff;
-  border-style: ridge;
-  border-radius: 10px;
-  text-align: center;
-}
-
-#headerList li
-{
-  display: inline;
-  padding: 1em;
-  font-size: 135%;
-}
-
-#mainDiv {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 1.5em;
-}
-
-a {
-  color: black;
-}
-
-button{
-  color:white;
-  text-decoration: none;
-  background: transparent;
-  border: none;
-}
-
-button:hover
-{
-  color: black;
-}
-
-button:active
-{
-  color:  #262626;
-
-}
-
-a:hover {
-  color: red;
-}
-
-.menu {
-  background: transparent;
-  border: none;
-  color: #fff;
-}
-
-.userpost {
-  background: transparent;
-  border: red;
-  text-align: center;
-}
-
-.textBody {
-  font-family: Tahoma;
-  font-size: 0.5em;
-  text-align: center;
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
-
-.textTitle {
-  font-family: Times New Roman;
-  font-size: 0.75em;
-  text-align: center;
+  font-family: "Impact";
 }

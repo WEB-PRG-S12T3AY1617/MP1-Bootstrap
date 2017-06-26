@@ -7,7 +7,7 @@
 			url: 'https://jsonplaceholder.typicode.com/users',
 			success: function(users) {
 				$.each(users, function(i, users) {
-					$("#mainDiv").append("<div id = \"profile-" + users.id + "\" class = \"classProfileDiv\"></div>");
+					$("#mainDiv").append("<div id = \"profile-" + users.id + "\" class = \"classProfileDiv\" profile-userID = \"" + users.id + "\"></div>");
 				});
 			},
 			error: function() {
@@ -26,7 +26,8 @@
 			success: function(posts) {
 				$.each(posts, function(i,posts) {
 					console.log("hello world");
-					$("#profile-" + posts.userId).append("<div id = \"postDiv-" + posts.id + "\" class = \"classPostDiv\"></div>");
+					$("#profile-" + posts.userId).append("<div id = \"postDiv-" + posts.id + "\" class = \"classPostDiv\" posts-userID = \"" + posts.userId + "\"></div>");
+				//  $(".classPostDiv").hide();
 				});
 			},
 			error: function() {
@@ -52,7 +53,7 @@
 		createPhotoDiv();
 	}
 
-	//creates photoDiv inside the albumDiv
+	//creates photoDiv inside the al	bumDiv
 	var createPhotoDiv = function() {
 		$.ajax({
 			type: 'GET',
@@ -66,4 +67,22 @@
 				alert("Oops something went wrong! Please refresh your browser");
 			}
 		});
+		createHomeDiv();
 	}
+
+
+var createHomeDiv =  function() {
+	$.ajax({
+		type: 'GET',
+		url: 'https://jsonplaceholder.typicode.com/posts',
+		success: function(posts) {
+			$.each(posts, function(i,post) {
+				$(".classPostDiv[posts-userID='" + post.userId +"']").append("<div class = \"posterDiv\"></div><div class = \"titleDiv\">"+ post.title +"</div><div class = \"bodyDiv\">"+ post.body +"</div>");
+			//	$(".titleDiv").css("font-size", "2em");
+			});
+		},
+		error: function() {
+			alert("Oops something went wrong! Please refresh your browser");
+		}
+	});
+}
