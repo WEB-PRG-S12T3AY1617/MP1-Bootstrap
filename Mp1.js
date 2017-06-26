@@ -9,6 +9,9 @@
 				$.each(users, function(i, users) {
 					$("#mainDiv").append("<div id = \"profile-" + users.id + "\" class = \"classProfileDiv\"></div>");
 				});
+			},
+			error: function() {
+				alert("Oops something went wrong! Please refresh your browser");
 			}
 		});
 		createPostDiv();
@@ -25,6 +28,9 @@
 					console.log("hello world");
 					$("#profile-" + posts.userId).append("<div id = \"postDiv-" + posts.userId + "\" class = \"classPostDiv\"></div>");
 				});
+			},
+			error: function() {
+				alert("Oops something went wrong! Please refresh your browser");
 			}
 		});
 	}
@@ -38,6 +44,9 @@
 				$.each(albums, function(i,albums) {
 					$("#profile-" + albums.userId).append("<div id = \"albumDiv-" + albums.id + "\" class = \"classAlbumDiv\"></div>");
 				});
+			},
+			error: function() {
+				alert("Oops something went wrong! Please refresh your browser");
 			}
 		});
 		createPhotoDiv();
@@ -52,6 +61,9 @@
 				$.each(photos, function(i,photos) {
 					$("#albumDiv-" + photos.albumId).append("<div id = \"photoDiv-" + photos.id + "\" class = \"classPhotoDiv\"></div>");
 				});
+			},
+			error: function() {
+				alert("Oops something went wrong! Please refresh your browser");
 			}
 		});
 	}
