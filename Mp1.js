@@ -26,7 +26,7 @@
 			success: function(posts) {
 				$.each(posts, function(i,posts) {
 					console.log("hello world");
-					$("#profile-" + posts.userId).append("<div id = \"postDiv-" + posts.userId + "\" class = \"classPostDiv\"></div>");
+					$("#profile-" + posts.userId).append("<div id = \"postDiv-" + posts.id + "\" class = \"classPostDiv\"></div>");
 				});
 			},
 			error: function() {
