@@ -38,12 +38,11 @@ body
 {
   font-family: "Impact";
 }
-.classPostDiv{
+.classPostDiv {
   display: flex;
   vertical-align: middle;
   margin: auto;
   flex-direction: column;
-  margin: 3;
 }
 #headText{
   margin: 0;
