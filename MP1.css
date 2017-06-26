@@ -25,17 +25,25 @@ body
 .titleDiv
 {
   cursor: pointer;
-  font-size: 2em;
+  font-family: "Georgia";
 }
 
 .bodyDiv
 {
   cursor: pointer;
+  font-size: 1.5em;
 }
-.classpostDiv{
+
+.posterDiv
+{
+  font-family: "Impact";
+}
+.classPostDiv{
   display: flex;
   vertical-align: middle;
-  justify-content: flex-start;
+  margin: auto;
+  flex-direction: column;
+  margin: 3;
 }
 #headText{
   margin: 0;
