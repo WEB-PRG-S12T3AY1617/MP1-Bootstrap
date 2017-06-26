@@ -22,7 +22,6 @@
 				console.log("Oops something went wrong! Please refresh your browser");
 			}
 		});
-		createPostDiv();
 	}
 
 	//creates postDivs inside the profileDiv of each user
@@ -40,7 +39,6 @@
 				console.log("Oops something went wrong! Please refresh your browser");
 			}
 		});
-		createAlbumDiv();
 	}
 
 	//creates albumDivs inside the profileDiv of each user
@@ -57,7 +55,6 @@
 				console.log("Oops something went wrong! Please refresh your browser");
 			}
 		});
-		createPhotoDiv();
 	}
 
 	//creates photoDiv inside the al	bumDiv
@@ -74,7 +71,6 @@
 				console.log("Oops something went wrong! Please refresh your browser");
 			}
 		});
-		createHomeDiv();
 	}
 
 
@@ -92,7 +88,6 @@
 				console.log("Oops something went wrong! Please refresh your browser");
 			}
 		});*/
-		displayProfileInfo();
 	}
 
 	var displayProfileInfo = function() {
@@ -102,6 +97,7 @@
 			success: function(users) {
 				$.each(users, function(i,users) {
 					$("#profile-" + users.id).append("<div id = \"profileInfo-" + users.id + "\"></div>");
+					console.log(users.id);
 					$("#profileInfo-" + users.id).append("<div class = \"profileName\">Name: " + users.name + "</div>");
 					$("#profileInfo-" + users.id).append("<div class = \"profileUsername\">Username: " + users.username + "</div>");
 					$("#profileInfo-" + users.id).append("<div class = \"profileEmail\">Email: " + users.email + "</div>");
@@ -123,7 +119,6 @@
 				console.log("Oops something went wrong! Please refresh your browser");
 			}
 		});
-		displayPhotoAlbum();
 	}
 
 	var displayPhotoAlbum = function() {
@@ -140,7 +135,6 @@
 				console.log("Oops something went wrong! Please refresh your browser");
 			}
 		});
-		displayPhotos();
 	}
 
 	var displayPhotos = function() {
@@ -156,7 +150,6 @@
 				console.log("Oops something went wrong! Please refresh your browser");
 			}
 		});
-		hideAlbums();
 	}
 
 	var hideAlbums = function() {
