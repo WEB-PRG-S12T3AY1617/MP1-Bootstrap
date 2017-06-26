@@ -7,7 +7,7 @@
 			url: 'https://jsonplaceholder.typicode.com/users',
 			success: function(users) {
 				$.each(users, function(i, users) {
-					$("#mainDiv").append("<div id = \"profile-" + users.id + "\"></div>");
+					$("#mainDiv").append("<div id = \"profile-" + users.id + "\" class = \"classProfileDiv\"></div>");
 				});
 			}
 		});
@@ -23,7 +23,7 @@
 			success: function(posts) {
 				$.each(posts, function(i,posts) {
 					console.log("hello world");
-					$("#profile-" + posts.userId).append("<div id = \"postDiv-" + posts.userId + "\"></div>");
+					$("#profile-" + posts.userId).append("<div id = \"postDiv-" + posts.userId + "\" class = \"classPostDiv\"></div>");
 				});
 			}
 		});
@@ -36,7 +36,7 @@
 			url: 'https://jsonplaceholder.typicode.com/albums',
 			success: function(albums) {
 				$.each(albums, function(i,albums) {
-					$("#profile-" + albums.userId).append("<div id = \"albumDiv-" + albums.id + "\"></div>");
+					$("#profile-" + albums.userId).append("<div id = \"albumDiv-" + albums.id + "\" class = \"classAlbumDiv\"></div>");
 				});
 			}
 		});
@@ -50,7 +50,7 @@
 			url: 'https://jsonplaceholder.typicode.com/photos',
 			success: function(photos) {
 				$.each(photos, function(i,photos) {
-					$("#albumDiv-" + photos.albumId).append("<div id = \"photoDiv-" + photos.id + "\"></div>");
+					$("#albumDiv-" + photos.albumId).append("<div id = \"photoDiv-" + photos.id + "\" class = \"classPhotoDiv\"></div>");
 				});
 			}
 		});
