@@ -24,12 +24,18 @@ body
 
 .titleDiv
 {
+  cursor: pointer;
   font-size: 2em;
 }
 
+.bodyDiv
+{
+  cursor: pointer;
+}
 .classpostDiv{
   display: flex;
   vertical-align: middle;
+  justify-content: flex-start;
 }
 #headText{
   margin: 0;

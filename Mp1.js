@@ -8,6 +8,7 @@
 	var runDisplayPhotos;
 	var runHideAlbum;
 	//creates profile Divs per user
+	var poster, temp = -1;
 	var createProfileDiv =  function() {
 		$.ajax({
 			type: 'GET',
@@ -31,7 +32,7 @@
 			url: 'https://jsonplaceholder.typicode.com/posts',
 			success: function(posts) {
 				$.each(posts, function(i,posts) {
-					$("#profile-" + posts.userId).append("<div id = \"postDiv-" + posts.id + "\" class = \"classPostDiv\" posts-userID = \"" + posts.userId + "\"></div>");
+					$("#profile-" + posts.userId).append("<div id = \"postDiv-" + posts.id + "\" class = \"classPostDiv\" posts-userID = \"" + posts.userId + "\"	></div>");
 				//  $(".classPostDiv").hide();
 				});
 			},
@@ -83,7 +84,8 @@
 			url: 'https://jsonplaceholder.typicode.com/posts',
 			success: function(posts) {
 				$.each(posts, function(i,post) {
-					$(".classPostDiv[posts-userID='" + post.userId +"']").append("<div class = \"posterDiv\"></div><div class = \"titleDiv\">"+ post.title +"</div><div class = \"bodyDiv\">"+ post.body +"</div>");
+					$(".classPostDiv[posts-userID='" + post.userId +"']").append("<div class = \"posterDiv\"> Posted by: </div><div class = \"titleDiv\">"+ post.title +"</div><div class = \"bodyDiv\">"+ post.body +"</div>");
+					poster = posts;
 				});
 			},
 			error: function() {
