@@ -101,17 +101,15 @@
 					$("#profileInfo-" + users.id).append("<div class = \"profileName\">Name: " + users.name + "</div>");
 					$("#profileInfo-" + users.id).append("<div class = \"profileUsername\">Username: " + users.username + "</div>");
 					$("#profileInfo-" + users.id).append("<div class = \"profileEmail\">Email: " + users.email + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileAddress\">Address:</div>");
 					$("#profileInfo-" + users.id).append("<div class = \"profileAddressStreet\">Street:" + users.address.street + "</div>");
 					$("#profileInfo-" + users.id).append("<div class = \"profileAddressSuite\">Suite:" + users.address.suite + "</div>");
 					$("#profileInfo-" + users.id).append("<div class = \"profileAddressCity\">City:" + users.address.city + "</div>");
 					$("#profileInfo-" + users.id).append("<div class = \"profileAddressZip\">Zip Code:" + users.address.zipcode + "</div>");
 					$("#profileInfo-" + users.id).append("<div class = \"profilePhone\">Phone: " + users.phone + "</div>");
 					$("#profileInfo-" + users.id).append("<div class = \"profileWebsite\">Website: " + users.website + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileCompany\">Company: </div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileCompanyName\">Name:" + users.company.name + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileCompanyCatch\">Catch Phrase:" + users.company.catchPhrase + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileCompanyBS\">BS:" + users.company.bs + "</div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profileCompanyName\">Company Name:" + users.company.name + "</div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profileCompanyCatch\">Company Catch Phrase:" + users.company.catchPhrase + "</div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profileCompanyBS\">Company BS:" + users.company.bs + "</div>");
 					$("#profileInfo-" + users.id).hide();
 				});
 			},
