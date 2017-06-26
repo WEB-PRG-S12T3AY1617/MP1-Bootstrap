@@ -1,7 +1,7 @@
-$(document).ready(function() {
 
 	//creates profile Divs per user
-	$(document).on("load", "#mainDiv", function() {
+	var createProfileDiv =  function() {
+		console.log("hello");
 		$.ajax({
 			type: 'GET',
 			url: 'https://jsonplaceholder.typicode.com/users',
@@ -11,23 +11,26 @@ $(document).ready(function() {
 				});
 			}
 		});
-	});
+		createPostDiv();
+		createAlbumDiv();
+	}
 
 	//creates postDivs inside the profileDiv of each user
-	$(document).on("load", "#mainDiv", function() {
+	var createPostDiv =  function() {
 		$.ajax({
 			type: 'GET',
 			url: 'https://jsonplaceholder.typicode.com/posts',
 			success: function(posts) {
 				$.each(posts, function(i,posts) {
+					console.log("hello world");
 					$("#profile-" + posts.userId).append("<div id = \"postDiv-" + posts.userId + "\"></div>");
 				});
 			}
 		});
-	});
+	}
 
 	//creates albumDivs inside the profileDiv of each user
-	$(document).on("load", "#mainDiv", function() {
+	var createAlbumDiv = function() {
 		$.ajax({
 			type: 'GET',
 			url: 'https://jsonplaceholder.typicode.com/albums',
@@ -37,10 +40,11 @@ $(document).ready(function() {
 				});
 			}
 		});
-	});
+		createPhotoDiv();
+	}
 
 	//creates photoDiv inside the albumDiv
-	$(document).on("load", "#mainDiv", function() {
+	var createPhotoDiv = function() {
 		$.ajax({
 			type: 'GET',
 			url: 'https://jsonplaceholder.typicode.com/photos',
@@ -50,6 +54,4 @@ $(document).ready(function() {
 				});
 			}
 		});
-	});
-
-});
+	}
