@@ -31,7 +31,7 @@
 			url: 'https://jsonplaceholder.typicode.com/posts',
 			success: function(posts) {
 				$.each(posts, function(i,posts) {
-					$("#profile-" + posts.userId).append("<div id = \"postDiv-" + posts.id + "\" class = \"classPostDiv\" posts-userID = \"" + posts.userId + "\"	><div class = \"posterDiv\"> Posted by: </div><div class = \"titleDiv\">Title: "+ posts.title +"</div><div class = \"bodyDiv\">Body: "+ posts.body +"</div></div>");
+					$("#profile-" + posts.userId).append("<div id = \"postDiv-" + posts.id + "\" class = \"classPostDiv\" posts-userID = \"" + posts.userId + "\"	><div class = \"posterDiv\"> Posted by: </div><div class = \"titleDiv\"><br>Title: "+ posts.title +"</div><div class = \"bodyDiv\"> "+ posts.body +"</div></div>");
 				//  $(".classPostDiv").hide();
 				});
 			},
@@ -96,7 +96,7 @@
 			url: 'https://jsonplaceholder.typicode.com/users',
 			success: function(users) {
 				$.each(users, function(i,users) {
-					$("#profile-" + users.id).append("<div id = \"profileInfo-" + users.id + "\"></div>");
+					$("#profile-" + users.id).append("<div id = \"profileInfo-" + users.id + "\"class=\"classProfileInfoDiv\"></div>");
 					console.log(users.id);
 					$("#profileInfo-" + users.id).append("<div class = \"profileName\">Name: " + users.name + "</div>");
 					$("#profileInfo-" + users.id).append("<div class = \"profileUsername\">Username: " + users.username + "</div>");
