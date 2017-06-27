@@ -31,8 +31,8 @@
 			url: 'https://jsonplaceholder.typicode.com/posts',
 			success: function(posts) {
 				$.each(posts, function(i,posts) {
-					$("#profile-" + posts.userId).append("<div id = \"postDiv-" + posts.id + "\" class = \"classPostDiv\" posts-userID = \"" + posts.userId + "\"	><div class = \"posterDiv\"> Posted by: </div><div class = \"titleDiv\"><br>Title: "+ posts.title +"</div><div class = \"bodyDiv\"> "+ posts.body +"</div></div>");
-				//  $(".classPostDiv").hide();
+					$("#profile-" + posts.userId).append("<div id = \"postDiv-" + posts.id + "\" class = \"classPostDiv\" posts-userID = \"" + posts.userId + "\"	><div class = \"posterDiv\"></div><div class = \"titleDiv\"><br>Title: "+ posts.title +"</div><div class = \"bodyDiv\"> "+ posts.body +"</div></div>");
+
 				});
 			},
 			error: function() {
@@ -111,6 +111,9 @@
 					$("#profileInfo-" + users.id).append("<div class = \"profileCompanyCatch\">Company Catch Phrase:" + users.company.catchPhrase + "</div>");
 					$("#profileInfo-" + users.id).append("<div class = \"profileCompanyBS\">Company BS:" + users.company.bs + "</div>");
 					$("#profileInfo-" + users.id).hide();
+					var x = users.name;
+					var parent =  $("#profileInfo-" + users.id).parent();
+					$(parent).find(" .classPostDiv .posterDiv:empty").text(users.name);
 				});
 			},
 			error: function() {
