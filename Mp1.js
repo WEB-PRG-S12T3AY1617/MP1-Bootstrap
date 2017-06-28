@@ -52,7 +52,7 @@
 				});
 			},
 			error: function() {
-				console.log("Oops something went wrong! Please refresh your browser");
+				console.log("Oops something went wrong! Please refresh your browser.");
 			}
 		});
 	}
@@ -98,7 +98,11 @@
 				$.each(users, function(i,users) {
 					$("#profile-" + users.id).append("<div id = \"profileInfo-" + users.id + "\"class=\"classProfileInfoDiv\"></div>");
 					console.log(users.id);					
+<<<<<<< HEAD
 					$("#profileInfo-" + users.id).prepend("<img class = \"call_modal\" width = 150px height = 150px src = \"images/icon.png\" /><div class = \"modal\"><div class = \"modal_bg\"></div><div class = \"modal_main\"><img class = \"closer\" src = \"images/i783wQYjrKQ.png\" \"/><img class = \"icon\" width = 600px height = 600px src = \"images/icon.png\" /></div></div>");
+=======
+					$("#profileInfo-" + users.id).prepend("<img class = \"icon\" width = 300 height = 300 src = \"images/icon.png\" />");
+>>>>>>> dd3136042b430685b7629dda114c99a6b07bce94
 					$("#profileInfo-" + users.id).append("<div class = \"profile\"><br>Name: " + users.name + "</div>");					
 					$("#profileInfo-" + users.id).append("<div class = \"profile\">Username: " + users.username + "</div>");
 					$("#profileInfo-" + users.id).append("<div class = \"profile\">Email: " + users.email + "</div>");

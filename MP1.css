@@ -1,5 +1,6 @@
 body
 {
+<<<<<<< HEAD
 	margin: 0;
 	padding: 0;
 	background-color: #BCDEE7;
@@ -60,6 +61,25 @@ button{
 
 #homeButton:active
 {
+=======
+	margin: auto;
+	background-color: #BCDEE7;
+}
+
+#homeButton
+{
+  left: 0;
+  cursor: pointer;
+  opacity: 0.2;
+}
+#homeButton:hover
+{
+	opacity: 0.6;
+}
+
+#homeButton:active
+{
+>>>>>>> dd3136042b430685b7629dda114c99a6b07bce94
 	opacity: 1;
 }
 #banner
@@ -119,6 +139,7 @@ button{
 	margin-right: auto;
 	border-style: solid;
     border-color: white;
+<<<<<<< HEAD
 }
 
 .call_modal{  	
@@ -127,6 +148,8 @@ button{
 	margin-right: auto;
 	border-style: solid;
     border-color: white;
+=======
+>>>>>>> dd3136042b430685b7629dda114c99a6b07bce94
 }
 
 .posterDiv

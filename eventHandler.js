@@ -3,6 +3,14 @@ $(document).ready(function(){
     $(".classPostDiv").hide();
     var x =  $(this).attr("posts-userID");
     $("#profileInfo-" + x).show();
+<<<<<<< HEAD
+=======
+  });
+
+  $(document).on("click","#homeButton",function(){
+    $(".classProfileInfoDiv").hide();
+    $(".classPostDiv").show();
+>>>>>>> dd3136042b430685b7629dda114c99a6b07bce94
   });
 
   $(document).on("click","#homeButton",function(){
