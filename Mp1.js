@@ -97,24 +97,25 @@
 			success: function(users) {
 				$.each(users, function(i,users) {
 					$("#profile-" + users.id).append("<div id = \"profileInfo-" + users.id + "\"class=\"classProfileInfoDiv\"></div>");
-					console.log(users.id);
-					$("#profileInfo-" + users.id).append("<div class = \"profileName\">Name: " + users.name + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileUsername\">Username: " + users.username + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileEmail\">Email: " + users.email + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileAddressStreet\">Street:" + users.address.street + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileAddressSuite\">Suite:" + users.address.suite + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileAddressCity\">City:" + users.address.city + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileAddressZip\">Zip Code:" + users.address.zipcode + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profilePhone\">Phone: " + users.phone + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileWebsite\">Website: " + users.website + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileCompanyName\">Company Name:" + users.company.name + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileCompanyCatch\">Company Catch Phrase:" + users.company.catchPhrase + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileCompanyBS\">Company BS:" + users.company.bs + "</div>");
+					console.log(users.id);					
+					$("#profileInfo-" + users.id).prepend("<img class = \"icon\" width = 300 height = 300 src = \"images/icon.png\" />");
+					$("#profileInfo-" + users.id).append("<div class = \"profile\"><br>Name: " + users.name + "</div>");					
+					$("#profileInfo-" + users.id).append("<div class = \"profile\">Username: " + users.username + "</div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profile\">Email: " + users.email + "</div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profile\">Street:" + users.address.street + "</div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profile\">Suite:" + users.address.suite + "</div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profile\">City:" + users.address.city + "</div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profile\">Zip Code:" + users.address.zipcode + "</div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profile\">Phone: " + users.phone + "</div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profile\">Website: " + users.website + "</div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profile\">Company Name:" + users.company.name + "</div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profile\">Company Catch Phrase:" + users.company.catchPhrase + "</div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profile\">Company BS:" + users.company.bs + "</div>");
 					$("#profileInfo-" + users.id).hide();
 					var x = users.name;
 					var parent =  $("#profileInfo-" + users.id).parent();
 					$(parent).find(" .classPostDiv .posterDiv:empty").text(users.name);
-				});
+				});				
 			},
 			error: function() {
 				console.log("Oops something went wrong! Please refresh your browser");
