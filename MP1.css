@@ -1,7 +1,7 @@
 body
 {
-  margin: auto;
-  background-color: #fffdf9;
+	margin: auto;
+	background-color: #BCDEE7;
 }
 
 #homeButton
@@ -42,11 +42,6 @@ body
 #bannerText:hover{
 	text-shadow: 2px 2px black;
 }
-#profileInfo{
-    font-family: 'Noto Sans', sans-serif;
-    font-style: italic;
-    font-size: 1em;   
-}
 
 .titleDiv
 {
@@ -69,6 +64,20 @@ body
 	padding-bottom: 1.3em;
 }
 
+.profile{
+	font-family: 'Noto Sans', sans-serif;    
+    font-size: 1em;   		
+	text-align: center;
+}
+
+.icon{  	
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: solid;
+    border-color: white;
+}
+
 .posterDiv
 {
     font-family: 'Noto Sans', sans-serif;
@@ -78,7 +87,7 @@ body
 	padding: 0;
 	cursor: pointer;
 }
-.classPostDiv{
+.classPostDiv{	
     display: flex;
     flex-direction: column;
     justify-content: space-between;
