@@ -52,7 +52,7 @@
 				});
 			},
 			error: function() {
-				console.log("Oops something went wrong! Please refresh your browser");
+				console.log("Oops something went wrong! Please refresh your browser.");
 			}
 		});
 	}
