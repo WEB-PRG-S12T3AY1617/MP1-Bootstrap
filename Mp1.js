@@ -31,8 +31,8 @@
 			url: 'https://jsonplaceholder.typicode.com/posts',
 			success: function(posts) {
 				$.each(posts, function(i,posts) {
-					$("#profile-" + posts.userId).append("<div id = \"postDiv-" + posts.id + "\" class = \"classPostDiv\" posts-userID = \"" + posts.userId + "\"	><div class = \"posterDiv\"> Posted by: </div><div class = \"titleDiv\">Title: "+ posts.title +"</div><div class = \"bodyDiv\">Body: "+ posts.body +"</div></div>");
-				//  $(".classPostDiv").hide();
+					$("#profile-" + posts.userId).append("<div id = \"postDiv-" + posts.id + "\" class = \"classPostDiv\" posts-userID = \"" + posts.userId + "\"	><div class = \"posterDiv\"></div><div class = \"titleDiv\"><br>Title: "+ posts.title +"</div><div class = \"bodyDiv\"> "+ posts.body +"</div></div>");
+
 				});
 			},
 			error: function() {
@@ -96,24 +96,26 @@
 			url: 'https://jsonplaceholder.typicode.com/users',
 			success: function(users) {
 				$.each(users, function(i,users) {
-					$("#profile-" + users.id).append("<div id = \"profileInfo-" + users.id + "\"></div>");
-					console.log(users.id);
-					$("#profileInfo-" + users.id).append("<div class = \"profileName\">Name: " + users.name + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileUsername\">Username: " + users.username + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileEmail\">Email: " + users.email + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileAddress\">Address:</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileAddressStreet\">Street:" + users.address.street + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileAddressSuite\">Suite:" + users.address.suite + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileAddressCity\">City:" + users.address.city + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileAddressZip\">Zip Code:" + users.address.zipcode + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profilePhone\">Phone: " + users.phone + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileWebsite\">Website: " + users.website + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileCompany\">Company: </div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileCompanyName\">Name:" + users.company.name + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileCompanyCatch\">Catch Phrase:" + users.company.catchPhrase + "</div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profileCompanyBS\">BS:" + users.company.bs + "</div>");
+					$("#profile-" + users.id).append("<div id = \"profileInfo-" + users.id + "\"class=\"classProfileInfoDiv\"></div>");
+					console.log(users.id);					
+					$("#profileInfo-" + users.id).prepend("<img class = \"call_modal\" width = 150px height = 150px src = \"images/icon.png\" /><div class = \"modal\"><div class = \"modal_bg\"></div><div class = \"modal_main\"><img class = \"closer\" src = \"images/i783wQYjrKQ.png\" \"/><img class = \"icon\" width = 600px height = 600px src = \"images/icon.png\" /></div></div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profile\"><br>Name: " + users.name + "</div>");					
+					$("#profileInfo-" + users.id).append("<div class = \"profile\">Username: " + users.username + "</div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profile\">Email: " + users.email + "</div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profile\">Street:" + users.address.street + "</div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profile\">Suite:" + users.address.suite + "</div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profile\">City:" + users.address.city + "</div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profile\">Zip Code:" + users.address.zipcode + "</div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profile\">Phone: " + users.phone + "</div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profile\">Website: " + users.website + "</div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profile\">Company Name:" + users.company.name + "</div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profile\">Company Catch Phrase:" + users.company.catchPhrase + "</div>");
+					$("#profileInfo-" + users.id).append("<div class = \"profile\">Company BS:" + users.company.bs + "</div>");
 					$("#profileInfo-" + users.id).hide();
-				});
+					var x = users.name;
+					var parent =  $("#profileInfo-" + users.id).parent();
+					$(parent).find(" .classPostDiv .posterDiv:empty").text(users.name);
+				});				
 			},
 			error: function() {
 				console.log("Oops something went wrong! Please refresh your browser");
@@ -143,7 +145,7 @@
 			url: 'https://jsonplaceholder.typicode.com/photos',
 			success: function(photos) {
 				$.each(photos, function(i,photos) {
-					$("#photoDiv-" + photos.id).append("<img src = \"" + photos.url + "\"></img>");
+					$("#photoDiv-" + photos.id).append("<div class = \"modal\"><div class = \"modal_bg\"><div class = \"modal_main\"><img src = \"" + photos.url + "\"></img>");
 				});
 			},
 			error: function() {

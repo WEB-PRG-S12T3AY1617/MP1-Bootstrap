@@ -1,13 +1,66 @@
 body
 {
-  margin: auto;
-  background-color: #fffdf9;
+	margin: 0;
+	padding: 0;
+	background-color: #BCDEE7;
 }
 
-#homebutton
+button{
+	padding: 20px;
+	margin: 6%;
+	border-radius: 5px;
+	background: #3399cc;
+	color: #fff;
+	font-size: 26px;
+	border: none;
+	cursor: pointer;
+}
+
+.modal{
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	}
+	.modal_bg{
+		background: rgba(0, 0, 0, .7);
+		height: 100%;
+		width: 100%;
+		position: fixed;
+		top: 0;
+	}
+	.modal_main{
+		position: fixed;
+		width: 600px;
+		height: 600px;
+		background: #fff;
+		border-radius: 6px;
+		top: 8%;
+		left: 25%;
+		z-index: 1;
+	}
+	.closer{
+		cursor: pointer;
+		position: absolute;
+		top: 1%;
+		right: .5%;
+	}
+
+#homeButton
 {
-  height: 300px;
-  width: 100px;
+  left: 0;
+  cursor: pointer;
+  opacity: 0.2;
+}
+#homeButton:hover
+{
+	opacity: 0.6;
+}
+
+#homeButton:active
+{
+	opacity: 1;
 }
 #banner
 {
@@ -22,28 +75,86 @@ body
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
+
+#bannerText
+{
+	margin: 0;
+	cursor: default;
+	text-shadow: 2px 2px gray;
+}
+#bannerText:hover{
+	text-shadow: 2px 2px black;
+}
+
 .titleDiv
 {
-  cursor: pointer;
-  font-family: "Georgia";
+    cursor: pointer;
+    font-family: 'Impact';
+    font-style: bold;
+    font-size: 1em;    
+	margin:0;
+	padding-top: 0px;
 }
 
 .bodyDiv
 {
-  cursor: pointer;
-  font-size: 1.5em;
+    cursor: pointer;
+    font-family: 'Georgia', sans-serif;
+    font-size: 1em;
+    color:black;
+    margin-bottom: 70;
+	padding: 1.2em;
+	padding-bottom: 1.3em;
+}
+
+.profile{
+	font-family: 'Noto Sans', sans-serif;    
+    font-size: 1em;   		
+	text-align: center;
+}
+
+.icon{  	
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: solid;
+    border-color: white;
+}
+
+.call_modal{  	
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: solid;
+    border-color: white;
 }
 
 .posterDiv
 {
-  font-family: "Impact";
+    font-family: 'Noto Sans', sans-serif;
+    font-style: bold;
+    font-size: 1em;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
 }
-.classPostDiv{
-  display: flex;
-  vertical-align: middle;
-  margin: auto;
-  flex-direction: column;
-  margin: 3;
+.classPostDiv{	
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	margin-left: 8em;
+	margin-right: 8em;
+	padding-bottom: 0;
+	border-style: solid;
+    border-color:white;
+	background-color: #f9f8e8;
+	padding: 1em;
+}
+.classPostDiv:hover{
+	background-color: #f2e0b5;
+}
+.classPostDiv:active{
+	background-color:#ead39d;
 }
 #headText{
   margin: 0;
