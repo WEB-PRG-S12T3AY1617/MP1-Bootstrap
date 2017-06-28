@@ -52,7 +52,7 @@
 				});
 			},
 			error: function() {
-				console.log("Oops something went wrong! Please refresh your browser.");
+				console.log("Oops something went wrong! Please refresh your browser");
 			}
 		});
 	}
@@ -98,11 +98,7 @@
 				$.each(users, function(i,users) {
 					$("#profile-" + users.id).append("<div id = \"profileInfo-" + users.id + "\"class=\"classProfileInfoDiv\"></div>");
 					console.log(users.id);					
-<<<<<<< HEAD
 					$("#profileInfo-" + users.id).prepend("<img class = \"call_modal\" width = 150px height = 150px src = \"images/icon.png\" /><div class = \"modal\"><div class = \"modal_bg\"></div><div class = \"modal_main\"><img class = \"closer\" src = \"images/i783wQYjrKQ.png\" \"/><img class = \"icon\" width = 600px height = 600px src = \"images/icon.png\" /></div></div>");
-=======
-					$("#profileInfo-" + users.id).prepend("<img class = \"icon\" width = 300 height = 300 src = \"images/icon.png\" />");
->>>>>>> dd3136042b430685b7629dda114c99a6b07bce94
 					$("#profileInfo-" + users.id).append("<div class = \"profile\"><br>Name: " + users.name + "</div>");					
 					$("#profileInfo-" + users.id).append("<div class = \"profile\">Username: " + users.username + "</div>");
 					$("#profileInfo-" + users.id).append("<div class = \"profile\">Email: " + users.email + "</div>");
@@ -149,7 +145,7 @@
 			url: 'https://jsonplaceholder.typicode.com/photos',
 			success: function(photos) {
 				$.each(photos, function(i,photos) {
-					$("#photoDiv-" + photos.id).append("<div class = \"modal\"><div class = \"modal_bg\"><div class = \"modal_main\"><img src = \"" + photos.url + "\"></img>");
+					$("#photoDiv-" + photos.id).append("<img src = \"" + photos.thumbnailUrl + "\" title = \"" + photos.title + "\" style = \"height:150px;width:150px\"></img>");
 				});
 			},
 			error: function() {
@@ -197,8 +193,12 @@
 		resolve(displayProfileInfo());
 	});
 
-	runDisplayPhotos = new Promise(function(resolve,eject) {
+	runDisplayPhotoAlbum = new Promise(function(resolve,eject) {
 		resolve(displayPhotoAlbum());
+	});
+
+	var runDisplayPhotos = new Promise(function(resolve,eject) {
+		resolve(displayPhotos());
 	});
 
 	runHideAlbum = new Promise(function(resolve,eject) {
@@ -218,6 +218,8 @@
 			return runDisplayProfile;
 		}).then(function(result){
 			return runDisplayAlbum;
+		}).then(function(result){
+			return runDisplayPhotoAlbum;
 		}).then(function(result){
 			return runDisplayPhotos;
 		}).then(function(result){

@@ -3,21 +3,18 @@ $(document).ready(function(){
     $(".classPostDiv").hide();
     var x =  $(this).attr("posts-userID");
     $("#profileInfo-" + x).show();
-<<<<<<< HEAD
-=======
-  });
-
-  $(document).on("click","#homeButton",function(){
-    $(".classProfileInfoDiv").hide();
-    $(".classPostDiv").show();
->>>>>>> dd3136042b430685b7629dda114c99a6b07bce94
   });
 
   $(document).on("click","#homeButton",function(){
     $(".classProfileInfoDiv").hide();
     $(".classPostDiv").show();
   });
-	
+
+  $(document).on("click", "#viewPhotos", function() {
+  	$(".classPostDiv").hide();
+  	$(".classAlbumDiv").show();
+  });
+
 	$(document).on("click", ".call_modal", function() {
 		$(".modal").fadeIn();
 		$(".modal_main").show();
