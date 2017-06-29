@@ -97,9 +97,9 @@
 			success: function(users) {
 				$.each(users, function(i,users) {
 					$("#profile-" + users.id).append("<div id = \"profileInfo-" + users.id + "\"class=\"classProfileInfoDiv\"></div>");
-					console.log(users.id);					
+					console.log(users.id);
 					$("#profileInfo-" + users.id).prepend("<img class = \"call_modal\" width = 150px height = 150px src = \"images/icon.png\" /><div class = \"modal\"><div class = \"modal_bg\"></div><div class = \"modal_main\"><img class = \"closer\" src = \"images/i783wQYjrKQ.png\" \"/><img class = \"icon\" width = 600px height = 600px src = \"images/icon.png\" /></div></div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profile\"><br>Name: " + users.name + "</div>");					
+					$("#profileInfo-" + users.id).append("<div class = \"profile\"><br>Name: " + users.name + "</div>");
 					$("#profileInfo-" + users.id).append("<div class = \"profile\">Username: " + users.username + "</div>");
 					$("#profileInfo-" + users.id).append("<div class = \"profile\">Email: " + users.email + "</div>");
 					$("#profileInfo-" + users.id).append("<div class = \"profile\">Street:" + users.address.street + "</div>");
@@ -114,8 +114,8 @@
 					$("#profileInfo-" + users.id).hide();
 					var x = users.name;
 					var parent =  $("#profileInfo-" + users.id).parent();
-					$(parent).find(" .classPostDiv .posterDiv:empty").text(users.name);
-				});				
+					$(parent).find(" .classPostDiv .posterDiv:empty").text("Posted by: " + users.name);
+				});
 			},
 			error: function() {
 				console.log("Oops something went wrong! Please refresh your browser");
