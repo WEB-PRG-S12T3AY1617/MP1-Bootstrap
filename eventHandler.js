@@ -1,9 +1,14 @@
 $(document).ready(function(){
-  $(document).on("click",".classPostDiv",function(){
+
+  $(document).on("click",".posterDiv",function(){
     $(".classPostDiv").hide();
-    var x =  $(this).attr("posts-userID");
+    $(".classAlbumDiv").hide();
+    var x =  $(this).parent().attr("posts-userID");
     $("#profileInfo-" + x).show();
+    $(".classPostDiv[posts-userID = "+ x +"]").show();
+
   });
+
 
   $(document).on("click","#homeButton",function(){
     $(".classProfileInfoDiv").hide();
