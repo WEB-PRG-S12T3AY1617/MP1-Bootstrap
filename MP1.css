@@ -2,7 +2,7 @@ body
 {
 	margin: 0;
 	padding: 0;
-	background-color: #BCDEE7;
+	background-color: #fffefc;
 }
 
 button{
@@ -26,6 +26,11 @@ button{
 	text-align: center;
 	font-size: 2em;
 	font-family: 'Noto Sans', sans-serif;
+}
+
+.classAlbumDiv{
+	display: flex;
+	flex-direction: row;
 }
 
 .modal{
@@ -140,11 +145,14 @@ button{
 .titleDiv
 {
     /*cursor: pointer;*/
-    font-family: 'Impact';
-    font-style: bold;
+    font-family: 'Garamond';
+    font-weight: bold;
     font-size: 1em;
 	margin:0;
 	padding-top: 0px;
+}
+.classPhotoDiv{
+	padding: 1.2em;
 }
 
 .bodyDiv
@@ -191,16 +199,16 @@ button{
 
 .posterDiv
 {
-    font-family: 'Noto Sans', sans-serif;
-    font-style: bold
-    font-size: 1em;
+    font-family: 'Bookman', sans-serif;
+    font-style: bold;
+    font-size: 2em;
 	margin: 0;
 	padding: 0;
 	cursor: pointer;
 }
 
 .posterDiv:hover{
-	color: #8942f4;
+	color: #214887;
 }
 
 .classPostDiv{
@@ -235,11 +243,6 @@ button{
   display: flex;
   margin: 0;
   flex-direction: column;
-}
-
-#mainFooterDiv
-{
-
 }
 
 footer

@@ -31,7 +31,7 @@
 			url: 'https://jsonplaceholder.typicode.com/posts',
 			success: function(posts) {
 				$.each(posts, function(i,posts) {
-					$("#profile-" + posts.userId).append("<div id = \"postDiv-" + posts.id + "\" class = \"classPostDiv\" posts-userID = \"" + posts.userId + "\"	><div class = \"posterDiv\"></div><div class = \"titleDiv\"><br>Title: "+ posts.title +"</div><div class = \"bodyDiv\"> "+ posts.body +"</div></div>");
+					$("#profile-" + posts.userId).append("<div id = \"postDiv-" + posts.id + "\" class = \"classPostDiv\" posts-userID = \"" + posts.userId + "\"	><div class = \"posterDiv\"></div><div class = \"titleDiv\"><br>"+ posts.title +"</div><div class = \"bodyDiv\"> "+ posts.body +"</div></div>");
 
 				});
 			},
@@ -97,11 +97,11 @@
 			success: function(users) {
 				$.each(users, function(i,users) {
 					$("#profile-" + users.id).append("<div id = \"profileInfo-" + users.id + "\"class=\"classProfileInfoDiv\"></div>");
-					console.log(users.id);					
+					console.log(users.id);
 					$("#profileInfo-" + users.id).append("<img class = \"profilePic\" width = 150px height = 150px src = \"images/icon.png\" />");
 					//$(".modal_main").append("<img class = \"closer\" src = \"images/i783wQYjrKQ.png\" \"/><img class = \"icon\" width = 600px height = 600px src = \"images/icon.png\" />")
 					//$("#profileInfo-" + users.id).append("<div class = \"modal\"><div class = \"modal_bg\"></div><div class = \"modal_sub\"></div></div>");
-					$("#profileInfo-" + users.id).append("<div class = \"profile\"><br>Name: " + users.name + "</div>");					
+					$("#profileInfo-" + users.id).append("<div class = \"profile\"><br>" + users.name + "</div>");
 					$("#profileInfo-" + users.id).append("<div class = \"profile\">Username: " + users.username + "</div>");
 					$("#profileInfo-" + users.id).append("<div class = \"profile\">Email: " + users.email + "</div>");
 					$("#profileInfo-" + users.id).append("<div class = \"profile\">Street:" + users.address.street + "</div>");
@@ -114,10 +114,12 @@
 					$("#profileInfo-" + users.id).append("<div class = \"profile\">Company Catch Phrase:" + users.company.catchPhrase + "</div>");
 					$("#profileInfo-" + users.id).append("<div class = \"profile\">Company BS:" + users.company.bs + "</div>");
 					$("#profileInfo-" + users.id).hide();
+
 					var x = users.name;
 					var parent =  $("#profileInfo-" + users.id).parent();
 					$(parent).find(" .classPostDiv .posterDiv:empty").text(users.name);
-				});				
+
+				});
 			},
 			error: function() {
 				console.log("Oops something went wrong! Please refresh your browser");
@@ -250,4 +252,6 @@
 		}).then(function(result){
 			return runHideAlbum;
 		});
+
+
 	}

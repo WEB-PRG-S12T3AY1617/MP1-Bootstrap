@@ -1,16 +1,18 @@
 $(document).ready(function(){
 
+
   $(document).on("click",".posterDiv",function(){
     $(".latest").remove();
     $(".classPostDiv").hide();
     $(".classAlbumDiv").hide();
     var x =  $(this).parent().attr("posts-userID");
+//    $("<p class = \"latest\">Latest Posts</p>").insertBefore($(".classPostDiv").first());
+  //  $("<p class = \"latest\">Latest Albums</p>").insertBefore($(".classAlbumDiv").first());
     $("#profileInfo-" + x).prependTo("#profile-" + x);
     $("#profileInfo-" + x).show();
+
     $(".classPostDiv[posts-userid = "+ x +"]").show();
     $(".classAlbumDiv[album-userid = "+ x +"]").show();
-    $("<p class = \"latest\">Latest Posts</p>").insertBefore($(".classPostDiv").first());
-    $("<p class = \"latest\">Latest Albums</p>").insertBefore($(".classAlbumDiv").first());
     $("html,body").scrollTop(0);
   });
 
@@ -26,6 +28,7 @@ $(document).ready(function(){
     $(".classProfileInfoDiv").hide();
   	$(".classPostDiv").hide();
   	$(".classAlbumDiv").show();
+    $(".classAlbumDiv").css("display", "flex");
     $(".latest").remove();
   });
 
