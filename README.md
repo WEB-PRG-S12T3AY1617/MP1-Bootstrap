@@ -8,3 +8,6 @@ Team Members:
   Fritz Manalili
 
 Section: S12
+
+
+Machine Project URL: https://youtu.be/Eklf267JNvk
