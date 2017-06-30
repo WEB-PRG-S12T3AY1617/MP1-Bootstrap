@@ -48,11 +48,11 @@
 			url: 'https://jsonplaceholder.typicode.com/albums',
 			success: function(albums) {
 				$.each(albums, function(i,albums) {
-					$("#profile-" + albums.userId).append("<div id = \"albumDiv-" + albums.id + "\" class = \"classAlbumDiv\"></div>");
+					$("#profile-" + albums.userId).append("<div id = \"albumDiv-" + albums.id + "\" class = \"classAlbumDiv\" albumTitle = \"" + albums.title + "\" album-userid = \"" + albums.userId + "\"></div>");
 				});
 			},
 			error: function() {
-				console.log("Oops something went wrong! Please refresh your browser.");
+				console.log("Oops something went wrong! Please refresh your browser");
 			}
 		});
 	}
@@ -98,11 +98,9 @@
 				$.each(users, function(i,users) {
 					$("#profile-" + users.id).append("<div id = \"profileInfo-" + users.id + "\"class=\"classProfileInfoDiv\"></div>");
 					console.log(users.id);					
-<<<<<<< HEAD
-					$("#profileInfo-" + users.id).prepend("<img class = \"call_modal\" width = 150px height = 150px src = \"images/icon.png\" /><div class = \"modal\"><div class = \"modal_bg\"></div><div class = \"modal_main\"><img class = \"closer\" src = \"images/i783wQYjrKQ.png\" \"/><img class = \"icon\" width = 600px height = 600px src = \"images/icon.png\" /></div></div>");
-=======
-					$("#profileInfo-" + users.id).prepend("<img class = \"icon\" width = 300 height = 300 src = \"images/icon.png\" />");
->>>>>>> dd3136042b430685b7629dda114c99a6b07bce94
+					$("#profileInfo-" + users.id).append("<img class = \"profilePic\" width = 150px height = 150px src = \"images/icon.png\" />");
+					//$(".modal_main").append("<img class = \"closer\" src = \"images/i783wQYjrKQ.png\" \"/><img class = \"icon\" width = 600px height = 600px src = \"images/icon.png\" />")
+					//$("#profileInfo-" + users.id).append("<div class = \"modal\"><div class = \"modal_bg\"></div><div class = \"modal_sub\"></div></div>");
 					$("#profileInfo-" + users.id).append("<div class = \"profile\"><br>Name: " + users.name + "</div>");					
 					$("#profileInfo-" + users.id).append("<div class = \"profile\">Username: " + users.username + "</div>");
 					$("#profileInfo-" + users.id).append("<div class = \"profile\">Email: " + users.email + "</div>");
@@ -144,12 +142,14 @@
 	}
 
 	var displayPhotos = function() {
+
 		$.ajax({
 			type: 'GET',
 			url: 'https://jsonplaceholder.typicode.com/photos',
 			success: function(photos) {
 				$.each(photos, function(i,photos) {
-					$("#photoDiv-" + photos.id).append("<div class = \"modal\"><div class = \"modal_bg\"><div class = \"modal_main\"><img src = \"" + photos.url + "\"></img>");
+					$("#photoDiv-" + photos.id).append("<img photoid = \"" + photos.id + "\" class = \"photoThumbnail call_modal\" src = \"" + photos.thumbnailUrl + "\" title = \"" + photos.title + "\" style = \"height:150px;width:150px\"></img>");
+					//$("#photoDiv-" + photos.id).append("<img src = \"" + photos.thumbnailUrl + "\" title = \"" + photos.title + "\" class = \"call_modal\" width = 150px height = 150px/><div class = \"modal\"><div class = \"modal_bg\"></div><div class = \"modal_main\"><img class = \"icon\" width = 600px height = 600px src = \"" + photos.url + "\" /><img class = \"closer\" src = \"images/i783wQYjrKQ.png\" \"/></div></div>");
 				});
 			},
 			error: function() {
@@ -169,6 +169,27 @@
 			},
 			error: function() {
 				console.log("Oops something went wrong! Please refresh your browser");
+			}
+		});
+	}
+
+	var getOriginalImage = function(photoid, albumtitle) {
+		console.log("getOriginalImage");
+		$.ajax({
+			type: 'GET',
+			url: 'https://jsonplaceholder.typicode.com/photos',
+			success: function(photos) {
+				$.each(photos, function(i,photos) {
+					if(photoid == photos.id) {
+						$(".modal_main").append("<img src = \"" + photos.url + "\" width = 600px height = 600px/><img class = \"closer\" src = \"images/i783wQYjrKQ.png\"/>");
+						var top = $(document).scrollTop();
+						$(".modal_main").css("top",top);
+						$(".modal_bg").css("top",top);
+						$(".modal_sub").css("top",top);
+						$(".modal_sub").append("<p><b>  Title: " + photos.title + "</b></p>");
+						$(".modal_sub").append("<p>  Taken from <a href = \"#\" class = \"goToAlbum\" album = \"" + albumtitle + "\">" + albumtitle + "</a></b></p>");
+					}
+				});
 			}
 		});
 	}
@@ -197,8 +218,12 @@
 		resolve(displayProfileInfo());
 	});
 
-	runDisplayPhotos = new Promise(function(resolve,eject) {
+	runDisplayPhotoAlbum = new Promise(function(resolve,eject) {
 		resolve(displayPhotoAlbum());
+	});
+
+	var runDisplayPhotos = new Promise(function(resolve,eject) {
+		resolve(displayPhotos());
 	});
 
 	runHideAlbum = new Promise(function(resolve,eject) {
@@ -218,6 +243,8 @@
 			return runDisplayProfile;
 		}).then(function(result){
 			return runDisplayAlbum;
+		}).then(function(result){
+			return runDisplayPhotoAlbum;
 		}).then(function(result){
 			return runDisplayPhotos;
 		}).then(function(result){

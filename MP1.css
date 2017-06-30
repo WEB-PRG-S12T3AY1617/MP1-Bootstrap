@@ -1,6 +1,5 @@
 body
 {
-<<<<<<< HEAD
 	margin: 0;
 	padding: 0;
 	background-color: #BCDEE7;
@@ -17,53 +16,69 @@ button{
 	cursor: pointer;
 }
 
+.albumTitle {
+	text-align: center;
+	font-size: 1em;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+.latest {
+	text-align: center;
+	font-size: 2em;
+	font-family: 'Noto Sans', sans-serif;
+}
+
 .modal{
-	display: none;
-	width: 100%;
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    }
+    .modal_bg{
+        background: rgba(0, 0, 0, .7);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+    }
+    .modalContainer {
+    	display: flex;
+    	flex-direction: row;
+    	justify-content: center;
+    }
+    .modal_main{
+    	flex: none;
+        position: relative;
+        width: 600px;
+        height: 600px;
+        background: #fff;
+        border-radius: 6px;
+        top: 3%;
+        /*margin: auto;*/
+        z-index: 1;
+    }
+    .modal_sub{
+    	flex: none;
+        position: relative;
+        width: 300px;
+        height: 600px;
+        background: #fff;
+        border-radius: 6px;
+        top: 3%;
+        /*margin-left: 74%;*/
+        z-index: 1;
+    }
+    .closer{
+        cursor: pointer;
+        position: absolute;
+        top: 1%;
+        right: .5%;
+    }
+
+.noScroll {
 	height: 100%;
-	position: absolute;
-	top: 0;
-	}
-	.modal_bg{
-		background: rgba(0, 0, 0, .7);
-		height: 100%;
-		width: 100%;
-		position: fixed;
-		top: 0;
-	}
-	.modal_main{
-		position: fixed;
-		width: 600px;
-		height: 600px;
-		background: #fff;
-		border-radius: 6px;
-		top: 8%;
-		left: 25%;
-		z-index: 1;
-	}
-	.closer{
-		cursor: pointer;
-		position: absolute;
-		top: 1%;
-		right: .5%;
-	}
-
-#homeButton
-{
-  left: 0;
-  cursor: pointer;
-  opacity: 0.2;
-}
-#homeButton:hover
-{
-	opacity: 0.6;
-}
-
-#homeButton:active
-{
-=======
-	margin: auto;
-	background-color: #BCDEE7;
+	overflow: hidden;
 }
 
 #homeButton
@@ -79,9 +94,25 @@ button{
 
 #homeButton:active
 {
->>>>>>> dd3136042b430685b7629dda114c99a6b07bce94
 	opacity: 1;
 }
+
+#viewPhotos
+{
+  left: 0;
+  cursor: pointer;
+  opacity: 0.2;
+}
+#viewPhotos:hover
+{
+	opacity: 0.6;
+}
+
+#viewPhotos:active
+{
+	opacity: 1;
+}
+
 #banner
 {
   display: flex;
@@ -108,17 +139,17 @@ button{
 
 .titleDiv
 {
-    cursor: pointer;
+    /*cursor: pointer;*/
     font-family: 'Impact';
     font-style: bold;
-    font-size: 1em;    
+    font-size: 1em;
 	margin:0;
 	padding-top: 0px;
 }
 
 .bodyDiv
 {
-    cursor: pointer;
+    /*cursor: pointer;*/
     font-family: 'Georgia', sans-serif;
     font-size: 1em;
     color:black;
@@ -128,40 +159,51 @@ button{
 }
 
 .profile{
-	font-family: 'Noto Sans', sans-serif;    
-    font-size: 1em;   		
+	font-family: 'Noto Sans', sans-serif;
+    font-size: 1em;
 	text-align: center;
 }
 
-.icon{  	
+.icon{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	border-style: solid;
     border-color: white;
-<<<<<<< HEAD
 }
 
-.call_modal{  	
+.call_modal{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	border-style: solid;
     border-color: white;
-=======
->>>>>>> dd3136042b430685b7629dda114c99a6b07bce94
+    cursor: pointer;
+}
+
+.profilePic{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: solid;
+    border-color: white;
 }
 
 .posterDiv
 {
     font-family: 'Noto Sans', sans-serif;
-    font-style: bold;
+    font-style: bold
     font-size: 1em;
 	margin: 0;
 	padding: 0;
 	cursor: pointer;
 }
-.classPostDiv{	
+
+.posterDiv:hover{
+	color: #8942f4;
+}
+
+.classPostDiv{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
